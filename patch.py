@@ -16,7 +16,7 @@ with dol_file:
     )
     # Don't poll HID
     dol_file.write_instructions(
-        0x801193e0,
+        0x803353b0,
         [
             blr(),
         ]
