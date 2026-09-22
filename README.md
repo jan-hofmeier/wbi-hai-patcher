@@ -22,7 +22,7 @@ On **Step 2**, after selecting the Source Game:
 - Select **Horizontal Wii Remote**
 - Expand **Game Files & Executable Patches**
 - Click **Extract main.dol** and select a directory of your choice
-- **Import Patch** and select the downloaded [vc-fix.uifdolpatch](blob:https://github.com/7274bf9c-fe65-4b3a-b78f-90e28095b25b) **or** [no-intro.uifdolpatch](blob:https://github.com/5158eab7-48f3-4c7a-bcd4-a66d94d483da)
+- **Import Patch** and select the downloaded [vc-fix.uifdolpatch](https://github.com/jan-hofmeier/wbi-hai-patcher/blob/main/UInjectForge/vc-fix.uifdolpatch) **or** [no-intro.uifdolpatch](https://github.com/jan-hofmeier/wbi-hai-patcher/blob/main/UInjectForge/no-intro.uifdolpatch)
 - Click **Preview Patch**
 - Check **Apply executable patch during build**
 
