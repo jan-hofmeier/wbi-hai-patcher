@@ -3,6 +3,16 @@
   "Name": "Disable Intros",
   "SourceSha256": "B38E29BB0355854F3B6D96F389B0EDEB669793414D477CCFC9F4E56BB75CBC71",
   "Patches": [
+      {
+      "Address": "0x801193e0",
+      "Expected": "4821BE81",
+      "Replacement": "60000000"
+    },
+    {
+      "Address": "0x803353b0",
+      "Expected": "9421FFE0",
+      "Replacement": "4E800020"
+    },
     {
       "Address": "0x800958b4",
       "Expected": "480835A9",
