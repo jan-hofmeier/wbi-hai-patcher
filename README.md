@@ -1,11 +1,11 @@
 # wbi-hai-patcher
 
-Patches *Worms Battle Island* to work with HAI-IOS (Wii U VC Inject).
+Patches *Worms Battle Island* to work as a Wii U VC Inject.
 
 ## Prerequisites
 
 - Python 3.x
-- `wit` (Wiimms ISO Tool) installed and available in your `PATH`.
+- [WIT](https://wit.wiimm.de/download.html) (Wiimms ISO Tool) installed and available in your `PATH`.
 
 ## Installation
 
@@ -64,15 +64,13 @@ If neither `--intro` nor `--nointro` is provided, `patch.py` will prompt you whe
 ### What the patcher does
 
 1. **Extraction & Rebuilding (`patch_iso.sh`)**:
-   - Extracts only the **DATA** partition (`wit extract --psel DATA`) into `wbi_extracted/`, bypassing update partitions.
-   - Overwrites existing `wbi_extracted/` directories and `wbi_patched.wbfs` files if present (`--overwrite`).
+   - Extracts only the **DATA** partition (`wit extract --psel DATA`) into `wbi_extracted/`, bypassing update partitions. (Overwrites existing `wbi_extracted/` ).
+   - Runs `patch.py`
    - Copies the modified directory structure into a `.wbfs` file using `wit copy`.
-
 2. **DOL Assembly Patching (`patch.py`)**:
    - Uses `ppc_asm` (`ppc_asm.dol_file.DolFile`) to modify PowerPC instructions in `main.dol`:
      - **Disable HID Initialization**: Replaces instruction at address `0x801193e0` with `nop` (no operation).
      - **Disable HID Polling**: Replaces instruction at address `0x803353b0` with `blr` (branch to link register / return).
-
 3. **No-Intro Patches & Cleanup**:
    - When `--nointro` is selected:
      - Patches address `0x800958b4` with `nop`.
