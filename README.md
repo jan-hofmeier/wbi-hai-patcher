@@ -1,13 +1,43 @@
-# wbi-hai-patcher
+# Worms Battle Island HAI Patcher
 
-Patches *Worms Battle Island* to work as a Wii U VC Inject.
+Patches *Worms Battle Island* to work as a Wii U VC Inject. It also has patches for disabeling the THQ and Team17 Intros.
 
-## Prerequisites
+There are two ways of applying the patch:
+
+1. If you are using [UInjectForge](https://zestyts.itch.io/uinjectforge), you can just add the patches during the build.
+2. For UWUVCI or Teconmoon VC Injector you can patch the wbfs file before injecting it.
+
+
+
+**Note about Gamepad support:** You can use the Gamepad to emulate a horizontal Wii Mote and it will work for Gameplay. But be aware that you need a real Wii Mote Initially to create your Team as the on screen Keyboard for entering the names needs a pointer.
+
+
+
+## UInjectForge
+
+UInjectForge (UIF) can use the same patched ISO as UWUVCI, but with UIF you can also apply the [patches](https://github.com/jan-hofmeier/wbi-hai-patcher/tree/main/UInjectForge) directly:
+
+On **Step 2**, after selecting the Source Game:
+
+- Select **Horizontal Wii Remote**
+- Expand **Game Files & Executable Patches**
+- Click **Extract main.dol** and select a directory of your choice
+- **Import Patch** and select the downloaded [vc-fix.uifdolpatch](blob:https://github.com/7274bf9c-fe65-4b3a-b78f-90e28095b25b) **or** [no-intro.uifdolpatch](blob:https://github.com/5158eab7-48f3-4c7a-bcd4-a66d94d483da)
+- Click **Preview Patch**
+- Check **Apply executable patch during build**
+
+
+
+## Patch ISO
+
+For UWUVCI or Teconmoon VC Injector patch the wbfs
+
+### Prerequisites
 
 - Python 3.x
 - [WIT](https://wit.wiimm.de/download.html) (Wiimms ISO Tool) installed and available in your `PATH`.
 
-## Installation
+### Installation
 
 Install Python dependencies:
 
@@ -28,9 +58,9 @@ Install Python dependencies:
   python -m pip install -r requirements.txt
   ```
 
-## Usage
+### Usage
 
-### Simple / Shell Script & Batch File (`patch_iso.sh` / `patch_iso.bat`)
+#### Simple / Shell Script & Batch File (`patch_iso.sh` / `patch_iso.bat`)
 
 - **Windows**:
   Double-click `patch_iso.bat` or drag-and-drop your ISO/WBFS file onto `patch_iso.bat`.
@@ -46,7 +76,7 @@ Install Python dependencies:
   ./patch_iso.sh [PATH_TO_ISO_OR_WBFS] [OPTIONS]
   ```
 
-#### Notes
+##### Notes
 - If no file path is provided as the first argument, the script will prompt you to drop or type the path into the window.
 - Additional options (like `--nointro` or `--intro`) are passed directly to `patch.py`.
 
@@ -60,7 +90,7 @@ patch_iso.bat "Worms Battle Island.iso" --nointro
 ./patch_iso.sh "Worms Battle Island.iso" --nointro
 ```
 
-### Python Patching Script (`patch.py`)
+#### Python Patching Script (`patch.py`)
 
 If you already extracted the game or want to run `patch.py` directly:
 
@@ -68,7 +98,7 @@ If you already extracted the game or want to run `patch.py` directly:
 python patch.py [OPTIONS]
 ```
 
-#### Options
+##### Options
 
 - `--dol <PATH>`: Path to `main.dol` (defaults to `wbi_extracted/sys/main.dol`).
 - `--dir <PATH>`, `--extract-dir <PATH>`: Path to the extracted game directory.
