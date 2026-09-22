@@ -1,0 +1,17 @@
+{
+  "SchemaVersion": 1,
+  "Name": "Disable Intros",
+  "SourceSha256": "B38E29BB0355854F3B6D96F389B0EDEB669793414D477CCFC9F4E56BB75CBC71",
+  "Patches": [
+    {
+      "Address": "0x800958b4",
+      "Expected": "480835A9",
+      "Replacement": "60000000"
+    },
+    {
+      "Address": "0x800958d8",
+      "Expected": "48083585",
+      "Replacement": "60000000"
+    }
+  ]
+}
