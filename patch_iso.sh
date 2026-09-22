@@ -20,7 +20,7 @@ if [ ! -f "$INPUT_FILE" ]; then
     exit 1
 fi
 
-wit extract --psel DATA "$INPUT_FILE" wbi_extracted
+wit extract --psel DATA --overwrite "$INPUT_FILE" wbi_extracted
 python3 patch.py "$@"
 wit copy --overwrite wbi_extracted/ wbi_patched.wbfs
 
