@@ -218,4 +218,5 @@ __marimo__/
 .streamlit/secrets.toml
 
 wbi_extracted
-wbi_patched.iso
+*.iso
+*.wbfs
