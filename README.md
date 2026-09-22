@@ -36,6 +36,7 @@ For UWUVCI or Teconmoon VC Injector patch the wbfs
 
 - Python 3.x
 - [WIT](https://wit.wiimm.de/download.html) (Wiimms ISO Tool) installed and available in your `PATH`.
+- Download this Repository
 
 ### Installation
 
